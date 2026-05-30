@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Analyzer</title>
+<style>
+    body{
+        background-color:black;
+    }
+
+    h1{
+        text-align: center;
+        color:white;
+        font-size:50px;
+        
+    }
+    .input{
+        display: block;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 10px;
+        font-size: 20px;
+        width: 300px;
+        border-radius: 10px;
+        border:none;
+        
+    }
+    .analyse{
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color:black;
+        color: white;
+        cursor: pointer;
+        border-color:white;
+        border-radius: 10px;
+        border-width: 5px;
+    }
+    .button-box{
+        display: block;
+        margin-top: 20px;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 20px;
+        width:400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:rgb(243, 243, 76);
+
+
+    }
+    .result{
+        text-align: center;
+        color:white;
+        font-size: 20px;
+        margin-top: 50px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .analyse:hover{
+    background-color:white;
+    color:black;
+}
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:10px;
+    width:120px;
+}
+</style>
+</head>
+<body>
+<h1>LeetCode Analyzer</h1>
+<div class="button-box">
+<input type="text" class="input" placeholder="username">
+<button class="analyse">Analyze</button>
+</div>
+<div class="result"></div>
+</body>
+</html>
+<script>
+    let button = document.querySelector('.analyse');
+    const input = document.querySelector('.input');
+    let result = document.querySelector('.result');
+
+    button.addEventListener('click', () => {
+        const username = input.value.trim();
+        if (username) {
+            result.innerHTML = `
+<h2>${username}</h2>
+
+<div class="stats">
+    <div class="card">
+        <h3>Easy</h3>
+        <p>120</p>
+    </div>
+
+    <div class="card">
+        <h3>Medium</h3>
+        <p>80</p>
+    </div>
+
+    <div class="card">
+        <h3>Hard</h3>
+        <p>15</p>
+    </div>
+</div>
+`;  
+        } else {
+            alert('Please enter a username.');
+        }
+    });
+   
+</script>
